@@ -1,19 +1,18 @@
 import { motion } from "framer-motion";
 
 const blogPosts = [
-  { id: 1, title: "How to Choose the Best Extra Virgin Olive Oil", date: "February 15, 2026", excerpt: "Not all olive oils are created equal. Learn how to identify true quality by looking at harvest dates, acidity levels, and taste profiles.", category: "Guide" },
-  { id: 2, title: "5 Mediterranean Recipes Using Premium Olive Oil", date: "February 1, 2026", excerpt: "From classic Greek salads to Italian bruschetta, discover five simple recipes that let your olive oil shine as the star ingredient.", category: "Recipes" },
-  { id: 3, title: "The Health Benefits of Cold-Pressed Olive Oil", date: "January 20, 2026", excerpt: "Rich in polyphenols and antioxidants, cold-pressed olive oil offers remarkable health benefits backed by science.", category: "Health" },
+  { id: 1, title: "Cum să alegi cel mai bun ulei de măsline extra virgin", date: "15 Februarie 2026", excerpt: "Nu toate uleiurile de măsline sunt la fel. Află cum să identifici calitatea adevărată analizând datele de recoltare, nivelurile de aciditate și profilurile de gust.", category: "Ghid" },
+  { id: 2, title: "5 Rețete Mediteraneene cu Ulei de Măsline Premium", date: "1 Februarie 2026", excerpt: "De la salate grecești clasice la bruschetta italiană, descoperă cinci rețete simple care lasă uleiul de măsline să fie vedeta.", category: "Rețete" },
+  { id: 3, title: "Beneficiile pentru Sănătate ale Uleiului de Măsline Presat la Rece", date: "20 Ianuarie 2026", excerpt: "Bogat în polifenoli și antioxidanți, uleiul de măsline presat la rece oferă beneficii remarcabile pentru sănătate, susținute de știință.", category: "Sănătate" },
 ];
 
 const Blog = () => {
   return (
     <main className="min-h-screen">
-      {/* Header */}
       <section className="bg-primary text-primary-foreground py-16 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <p className="text-secondary font-sans uppercase tracking-[0.3em] text-sm mb-2">From Our Grove</p>
-          <h1 className="font-serif text-4xl md:text-5xl font-bold">The OliveGold Journal</h1>
+          <p className="text-secondary font-sans uppercase tracking-[0.3em] text-sm mb-2">Din Livada Noastră</p>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold">Jurnalul Livezii</h1>
         </motion.div>
       </section>
 
@@ -34,7 +33,7 @@ const Blog = () => {
               </div>
               <h2 className="font-serif text-2xl font-bold text-foreground mb-3 hover:text-secondary transition-colors">{post.title}</h2>
               <p className="text-muted-foreground font-sans leading-relaxed">{post.excerpt}</p>
-              <span className="inline-block mt-4 text-sm text-secondary font-sans font-bold uppercase tracking-wider">Read More →</span>
+              <span className="inline-block mt-4 text-sm text-secondary font-sans font-bold uppercase tracking-wider">Citește Mai Mult →</span>
             </motion.article>
           ))}
         </div>

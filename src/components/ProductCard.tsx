@@ -27,7 +27,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
       transition={{ duration: 0.5 }}
       className="group bg-card rounded-lg overflow-hidden shadow-card hover:shadow-hover transition-shadow duration-300"
     >
-      {/* Image */}
       <div className="relative overflow-hidden aspect-square bg-muted">
         <Link to={`/product/${product.slug}`}>
           <img
@@ -43,17 +42,16 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </span>
         )}
         <button
-          onClick={() => { toggleWishlist(product.id); toast(inWishlist ? "Removed from wishlist" : "Added to wishlist"); }}
+          onClick={() => { toggleWishlist(product.id); toast(inWishlist ? "Eliminat din favorite" : "Adăugat la favorite"); }}
           className={`absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center transition-colors ${
             inWishlist ? "bg-secondary text-secondary-foreground" : "bg-card/80 text-foreground hover:bg-secondary hover:text-secondary-foreground"
           }`}
-          aria-label="Toggle wishlist"
+          aria-label="Comută favorite"
         >
           <Heart size={16} fill={inWishlist ? "currentColor" : "none"} />
         </button>
       </div>
 
-      {/* Content */}
       <div className="p-4 md:p-5">
         <Link to={`/product/${product.slug}`}>
           <h3 className="font-serif text-lg font-semibold text-foreground hover:text-secondary transition-colors leading-tight">
@@ -62,7 +60,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </Link>
         <p className="text-sm text-muted-foreground mt-2 line-clamp-2 font-sans">{product.shortDescription}</p>
 
-        {/* Rating */}
         {avgRating > 0 && (
           <div className="flex items-center gap-1 mt-2">
             {[1,2,3,4,5].map(i => (
@@ -75,12 +72,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <div className="flex items-center justify-between mt-4">
           <span className="text-xl font-serif font-bold text-foreground">€{product.price.toFixed(2)}</span>
           <button
-            onClick={() => { addToCart(product); toast.success(`${product.title} added to cart`); }}
+            onClick={() => { addToCart(product); toast.success(`${product.title} adăugat în coș`); }}
             className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-sans font-bold rounded-md hover:bg-olive-dark transition-colors"
             disabled={!product.inStock}
           >
             <ShoppingCart size={14} />
-            {product.inStock ? "Add" : "Sold Out"}
+            {product.inStock ? "Adaugă" : "Epuizat"}
           </button>
         </div>
       </div>
