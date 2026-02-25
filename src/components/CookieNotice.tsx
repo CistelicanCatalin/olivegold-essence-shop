@@ -29,13 +29,13 @@ const CookieNotice = () => {
         >
           <div className="container mx-auto max-w-4xl bg-foreground text-primary-foreground rounded-lg p-6 flex flex-col md:flex-row items-center gap-4 shadow-2xl">
             <p className="text-sm font-sans flex-1">
-              We use cookies to enhance your browsing experience and provide personalized content. By continuing to use our site, you agree to our use of cookies.
+              Folosim cookie-uri pentru a îmbunătăți experiența ta de navigare și pentru a oferi conținut personalizat. Continuând să folosești site-ul nostru, ești de acord cu utilizarea cookie-urilor.
             </p>
             <div className="flex items-center gap-3">
               <button onClick={accept} className="px-6 py-2 bg-secondary text-secondary-foreground font-sans font-bold text-sm rounded-md hover:bg-gold-dark transition-colors">
-                Accept All
+                Acceptă Toate
               </button>
-              <button onClick={accept} className="text-primary-foreground/60 hover:text-primary-foreground transition-colors" aria-label="Close">
+              <button onClick={accept} className="text-primary-foreground/60 hover:text-primary-foreground transition-colors" aria-label="Închide">
                 <X size={20} />
               </button>
             </div>

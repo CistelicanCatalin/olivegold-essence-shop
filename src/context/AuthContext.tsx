@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const logout = () => setUser(null);
-  const isAdmin = user?.email === "admin@olivegold.com";
+  const isAdmin = user?.email === "admin@livadacumaslini.ro";
 
   return (
     <AuthContext.Provider value={{ user, login, register, logout, isAdmin }}>

@@ -14,9 +14,9 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/shop", label: "Shop" },
-    { to: "/about", label: "About" },
+    { to: "/", label: "Acasă" },
+    { to: "/shop", label: "Magazin" },
+    { to: "/about", label: "Despre Noi" },
     { to: "/blog", label: "Blog" },
     { to: "/contact", label: "Contact" },
   ];
@@ -25,28 +25,28 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      {/* Promo banner */}
+      {/* Banner promoțional */}
       <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-sans tracking-wide">
-        Free shipping on orders over €50 · Use code <span className="font-bold">OLIVEGOLD10</span> for 10% off
+        Transport gratuit pentru comenzi peste 50€ · Folosește codul <span className="font-bold">LIVADA10</span> pentru 10% reducere
       </div>
 
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Mobile menu toggle */}
+          {/* Meniu mobil */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden text-foreground p-2"
-            aria-label="Toggle menu"
+            aria-label="Deschide meniul"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
           {/* Logo */}
           <Link to="/" className="font-serif text-2xl md:text-3xl font-bold tracking-wider text-gradient-gold">
-            OLIVEGOLD
+            LIVADA CU MĂSLINI
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Navigare Desktop */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map(link => (
               <Link
@@ -61,15 +61,15 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Icons */}
+          {/* Iconițe */}
           <div className="flex items-center gap-3 md:gap-4">
-            <button onClick={() => setSearchOpen(!searchOpen)} className="text-foreground hover:text-secondary transition-colors" aria-label="Search">
+            <button onClick={() => setSearchOpen(!searchOpen)} className="text-foreground hover:text-secondary transition-colors" aria-label="Caută">
               <Search size={20} />
             </button>
-            <Link to="/account" className="text-foreground hover:text-secondary transition-colors" aria-label="Account">
+            <Link to="/account" className="text-foreground hover:text-secondary transition-colors" aria-label="Cont">
               <User size={20} />
             </Link>
-            <Link to="/shop?wishlist=true" className="text-foreground hover:text-secondary transition-colors relative" aria-label="Wishlist">
+            <Link to="/shop?wishlist=true" className="text-foreground hover:text-secondary transition-colors relative" aria-label="Favorite">
               <Heart size={20} />
               {wishlist.length > 0 && (
                 <span className="absolute -top-2 -right-2 bg-secondary text-secondary-foreground text-xs w-4 h-4 rounded-full flex items-center justify-center font-bold">
@@ -77,7 +77,7 @@ const Header = () => {
                 </span>
               )}
             </Link>
-            <Link to="/cart" className="text-foreground hover:text-secondary transition-colors relative" aria-label="Cart">
+            <Link to="/cart" className="text-foreground hover:text-secondary transition-colors relative" aria-label="Coș">
               <ShoppingCart size={20} />
               {totalItems > 0 && (
                 <span className="absolute -top-2 -right-2 bg-secondary text-secondary-foreground text-xs w-4 h-4 rounded-full flex items-center justify-center font-bold">
@@ -88,7 +88,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Search bar */}
+        {/* Bară de căutare */}
         <AnimatePresence>
           {searchOpen && (
             <motion.div
@@ -103,7 +103,7 @@ const Header = () => {
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search our collection..."
+                    placeholder="Caută în colecția noastră..."
                     className="w-full px-4 py-3 bg-muted border border-border rounded-md font-sans text-sm focus:outline-none focus:ring-2 focus:ring-secondary"
                     autoFocus
                   />
@@ -114,7 +114,7 @@ const Header = () => {
         </AnimatePresence>
       </div>
 
-      {/* Mobile menu */}
+      {/* Meniu mobil */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.nav

@@ -11,10 +11,10 @@ const CartPage = () => {
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <ShoppingBag size={64} className="mx-auto text-muted-foreground/30 mb-6" />
-          <h1 className="font-serif text-3xl font-bold mb-4">Your Cart is Empty</h1>
-          <p className="text-muted-foreground font-sans mb-6">Add some premium olive oils to get started.</p>
+          <h1 className="font-serif text-3xl font-bold mb-4">Coșul Tău Este Gol</h1>
+          <p className="text-muted-foreground font-sans mb-6">Adaugă uleiuri de măsline premium pentru a începe.</p>
           <Link to="/shop" className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground font-sans font-bold text-sm uppercase tracking-wider rounded-md hover:bg-olive-dark transition-colors">
-            Continue Shopping
+            Continuă Cumpărăturile
           </Link>
         </div>
       </main>
@@ -25,12 +25,11 @@ const CartPage = () => {
     <main className="min-h-screen">
       <div className="container mx-auto px-4 py-10">
         <Link to="/shop" className="inline-flex items-center gap-2 text-sm text-muted-foreground font-sans hover:text-secondary mb-8">
-          <ArrowLeft size={14} /> Continue Shopping
+          <ArrowLeft size={14} /> Continuă Cumpărăturile
         </Link>
-        <h1 className="font-serif text-3xl md:text-4xl font-bold mb-10">Shopping Cart</h1>
+        <h1 className="font-serif text-3xl md:text-4xl font-bold mb-10">Coșul de Cumpărături</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {/* Cart Items */}
           <div className="lg:col-span-2 space-y-4">
             {items.map(({ product, quantity }) => (
               <motion.div
@@ -65,25 +64,24 @@ const CartPage = () => {
             ))}
           </div>
 
-          {/* Order Summary */}
           <div className="bg-card rounded-lg p-6 shadow-card h-fit sticky top-32">
-            <h2 className="font-serif text-xl font-bold mb-6">Order Summary</h2>
+            <h2 className="font-serif text-xl font-bold mb-6">Sumar Comandă</h2>
             <div className="space-y-3 text-sm font-sans">
               <div className="flex justify-between"><span className="text-muted-foreground">Subtotal</span><span>€{totalPrice.toFixed(2)}</span></div>
-              <div className="flex justify-between"><span className="text-muted-foreground">Shipping</span><span>{totalPrice >= 50 ? "Free" : "€5.00"}</span></div>
+              <div className="flex justify-between"><span className="text-muted-foreground">Livrare</span><span>{totalPrice >= 50 ? "Gratuită" : "5,00€"}</span></div>
               <div className="border-t border-border pt-3 flex justify-between font-bold text-base">
                 <span>Total</span>
                 <span className="font-serif text-xl">€{(totalPrice + (totalPrice >= 50 ? 0 : 5)).toFixed(2)}</span>
               </div>
             </div>
             {totalPrice < 50 && (
-              <p className="text-xs text-secondary font-sans mt-3">Add €{(50 - totalPrice).toFixed(2)} more for free shipping!</p>
+              <p className="text-xs text-secondary font-sans mt-3">Adaugă încă €{(50 - totalPrice).toFixed(2)} pentru transport gratuit!</p>
             )}
             <Link
               to="/checkout"
               className="block mt-6 text-center px-8 py-3 bg-primary text-primary-foreground font-sans font-bold text-sm uppercase tracking-wider rounded-md hover:bg-olive-dark transition-colors"
             >
-              Proceed to Checkout
+              Finalizează Comanda
             </Link>
           </div>
         </div>
